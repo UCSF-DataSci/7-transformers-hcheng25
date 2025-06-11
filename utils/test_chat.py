@@ -5,11 +5,11 @@ import requests
 import argparse
 import os
 # Import our chat modules - since we're in the same directory
-from one_off_chat import get_response as get_one_off_response
+from .one_off_chat import get_response as get_one_off_response
 # Optionally import the conversation module if testing that too
 # from conversation import get_response as get_contextual_response
 
-def test_chat(questions, model_name, api_key=None):
+def test_chat(questions, model_name, api_key=None, verbose=1):
     """
     Test the chat function with a list of questions
     
@@ -24,7 +24,7 @@ def test_chat(questions, model_name, api_key=None):
     results = {}
     
     for question in questions:
-        print(f"Testing question: {question}")
+        if verbose==1: print(f"Testing question: {question}")
         # Get response using the one-off chat function
         response = get_one_off_response(question, model_name, api_key)
         results[question] = response

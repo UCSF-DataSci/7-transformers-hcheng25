@@ -48,6 +48,8 @@ np.random.seed(42)
 
 # Create directories
 os.makedirs('models', exist_ok=True)
+```
+
 ## 1. Exploring the Synthetic Mention Corpora
 
 ```python
